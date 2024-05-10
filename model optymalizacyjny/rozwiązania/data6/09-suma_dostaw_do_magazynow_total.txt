@@ -1,0 +1,6 @@
+sum{p in PRODUCENCI, w in WARZYWA} transport_do_magazynow_rok[m,p,w] [*] :=
+Piaseczno   750.000
+ Pruszkow   547.802
+ Zielonka  1200.000
+;
+

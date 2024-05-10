@@ -1,0 +1,13 @@
+sum{m in MAGAZYNY, t in TYGODNIE, w in WARZYWA} transport_do_sklepow_tyg[s,m,w,t]*koszt_transportu*dystans_sklep_magazyn[s,m] [*] :=
+ArabicGroceryShop  22881.945
+  DobryWarzywniak  13433.182
+          Krzesak  26485.164
+          Stoisko  20153.815
+          UAktora  17928.657
+       UCHLOPAKOW  17564.041
+         UKarolci  32971.330
+         UKermita   9499.308
+      UPanaWojtka  25270.442
+    VegitoWarzywa  20845.483
+;
+

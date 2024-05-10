@@ -1,0 +1,28 @@
+transport_do_magazynow_rok [Piaseczno,*,*]
+:              Buraki   Kapusta   Marchew Ziemniaki    :=
+Blonie           0.000    0.000     0.000     0.000
+GoraKalwaria   190.000   70.000    90.000   160.000
+Ksiazenice       0.000    0.000     0.000     0.000
+Legionowo        0.000    0.000     0.000     0.000
+Otwock          18.612   35.796   101.595    83.997
+Wolomin          0.000    0.000     0.000     0.000
+
+ [Pruszkow,*,*]
+:              Buraki   Kapusta   Marchew Ziemniaki    :=
+Blonie         120.000   80.000   160.000   130.000
+GoraKalwaria     0.000    0.000     0.000     0.000
+Ksiazenice      50.511    0.000     0.000     7.291
+Legionowo        0.000    0.000     0.000     0.000
+Otwock           0.000    0.000     0.000     0.000
+Wolomin          0.000    0.000     0.000     0.000
+
+ [Zielonka,*,*]
+:              Buraki    Kapusta   Marchew Ziemniaki    :=
+Blonie           0.000     0.000     0.000     0.000
+GoraKalwaria     0.000     0.000     0.000     0.000
+Ksiazenice       0.000     0.000     0.000     0.000
+Legionowo       50.000     4.074   100.000   271.287
+Otwock           4.639     0.000     0.000     0.000
+Wolomin        180.000   230.000   150.000   210.000
+;
+

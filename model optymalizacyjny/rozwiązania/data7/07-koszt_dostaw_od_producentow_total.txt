@@ -1,0 +1,9 @@
+sum{m in MAGAZYNY, w in WARZYWA} transport_do_magazynow_rok[m,p,w]*koszt_transportu*dystans_magazyn_producent[p,m] [*] :=
+      Blonie  39392.600
+GoraKalwaria  44458.476
+  Ksiazenice      0.000
+   Legionowo  23374.086
+      Otwock      0.000
+     Wolomin  27720.000
+;
+

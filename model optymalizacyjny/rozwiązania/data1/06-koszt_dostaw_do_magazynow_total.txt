@@ -1,0 +1,6 @@
+sum{p in PRODUCENCI, w in WARZYWA} transport_do_magazynow_rok[m,p,w]*koszt_transportu*dystans_magazyn_producent[p,m] [*] :=
+Piaseczno  67971.612
+ Pruszkow  44758.663
+ Zielonka  81020.029
+;
+

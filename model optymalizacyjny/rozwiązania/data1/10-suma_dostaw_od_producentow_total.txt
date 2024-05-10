@@ -1,0 +1,9 @@
+sum{m in MAGAZYNY, w in WARZYWA} transport_do_magazynow_rok[m,p,w] [*] :=
+      Blonie  490.000
+GoraKalwaria  510.000
+  Ksiazenice   24.481
+   Legionowo  392.725
+      Otwock  160.929
+     Wolomin  770.000
+;
+

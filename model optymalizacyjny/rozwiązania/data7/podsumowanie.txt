@@ -1,0 +1,9 @@
+
+Funkcja celu
+302801.160
+Suma wszystkich dostaw do sklepow
+1882.651
+Suma wszystkich dostaw do magazynów
+1882.651
+Suma wszystkich prognoz
+1879.101

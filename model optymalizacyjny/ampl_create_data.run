@@ -1,0 +1,38 @@
+option solver highs; 
+reset; model model.mod; data generated_data.dat; solve;
+option omit_zero_cols 1; option display_width 200; option display_round 3;
+
+display transport_do_sklepow_tyg > "rozwiązania/01-tyg_trans_warz_sklep.txt";
+display transport_do_magazynow_rok > "rozwiązania/02-rok_trans_warz_magazyny.txt";
+
+# ile łącznie ton zostało przetransportowanych 
+display { s in SKLEPY, t in TYGODNIE } sum {m in MAGAZYNY, w in WARZYWA} transport_do_sklepow_tyg[s, m, w, t] > "rozwiązania/03-tyg_trans_sklepy_total.txt";
+display { m in MAGAZYNY, p in PRODUCENCI } sum {w in WARZYWA} transport_do_magazynow_rok[m, p, w] > "rozwiązania/04-rok_trans_magazyny_total.txt";
+
+display { s in SKLEPY } sum { m in MAGAZYNY, t in TYGODNIE, w in WARZYWA} transport_do_sklepow_tyg[s, m, w, t] * koszt_transportu * dystans_sklep_magazyn[s, m] > "rozwiązania/05-koszt_dostaw_do_sklepów_total.txt";
+display { m in MAGAZYNY } sum { p in PRODUCENCI, w in WARZYWA} transport_do_magazynow_rok[m, p, w] * koszt_transportu *dystans_magazyn_producent [p, m]> "rozwiązania/06-koszt_dostaw_do_magazynow_total.txt";
+display { p in PRODUCENCI } sum { m in MAGAZYNY, w in WARZYWA} transport_do_magazynow_rok[m, p, w] * koszt_transportu *dystans_magazyn_producent [p, m]> "rozwiązania/07-koszt_dostaw_od_producentow_total.txt";
+
+display { s in SKLEPY } sum { m in MAGAZYNY, t in TYGODNIE, w in WARZYWA} transport_do_sklepow_tyg[s, m, w, t] > "rozwiązania/08-suma_dostaw_do_sklepow_total.txt";
+display { m in MAGAZYNY } sum { p in PRODUCENCI, w in WARZYWA} transport_do_magazynow_rok[m, p, w] > "rozwiązania/09-suma_dostaw_do_magazynow_total.txt";
+display { p in PRODUCENCI } sum { m in MAGAZYNY, w in WARZYWA} transport_do_magazynow_rok[m, p, w] > "rozwiązania/10-suma_dostaw_od_producentow_total.txt";
+
+display { t in TYGODNIE } sum { m in MAGAZYNY, s in SKLEPY, w in WARZYWA} transport_do_sklepow_tyg[s, m, w, t] * koszt_transportu  * dystans_sklep_magazyn[s, m]> "rozwiązania/11-koszt_dostaw_do_sklepów_na_przestrzeni_roku.txt";
+display { t in TYGODNIE } sum { m in MAGAZYNY, s in SKLEPY, w in WARZYWA} transport_do_sklepow_tyg[s, m, w, t] > "rozwiązania/12-suma_dostaw_do_sklepów_na_przestrzeni_roku.txt";
+display { t in TYGODNIE, s in SKLEPY } sum { m in MAGAZYNY, w in WARZYWA} transport_do_sklepow_tyg[s, m, w, t] * koszt_transportu  * dystans_sklep_magazyn[s, m]> "rozwiązania/13-koszt_dostaw_do_poszczególnych_sklepów_na_przestrzeni_roku.txt";
+display { t in TYGODNIE, s in SKLEPY } sum { m in MAGAZYNY, w in WARZYWA} transport_do_sklepow_tyg[s, m, w, t] > "rozwiązania/14-suma_dostaw_do_poszczególnych_sklepów_na_przestrzeni_roku.txt";
+
+print "" > "rozwiązania/podsumowanie.txt";
+
+option print_round 3;
+print "Funkcja celu" >> "rozwiązania/podsumowanie.txt";
+print calk_koszt_transportu >> "rozwiązania/podsumowanie.txt";
+
+print "Suma wszystkich dostaw do sklepow" >> "rozwiązania/podsumowanie.txt";
+print sum { s in SKLEPY, m in MAGAZYNY, w in WARZYWA, t in TYGODNIE } transport_do_sklepow_tyg[s, m, w, t] >> "rozwiązania/podsumowanie.txt";
+print "Suma wszystkich dostaw do magazynów" >> "rozwiązania/podsumowanie.txt";
+print sum { m in MAGAZYNY, p in PRODUCENCI, w in WARZYWA} transport_do_magazynow_rok[m, p, w] >> "rozwiązania/podsumowanie.txt";
+print "Suma wszystkich prognoz" >> "rozwiązania/podsumowanie.txt";
+print sum { s in SKLEPY, w in WARZYWA, t in TYGODNIE } sklep_prognoza_tyg[t, w, s] >> "rozwiązania/podsumowanie.txt";
+
+exit;

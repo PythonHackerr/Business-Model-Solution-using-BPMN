@@ -1,0 +1,13 @@
+sum{m in MAGAZYNY, t in TYGODNIE, w in WARZYWA} transport_do_sklepow_tyg[s,m,w,t] [*] :=
+ArabicGroceryShop  243.639
+  DobryWarzywniak  196.105
+          Krzesak  292.012
+          Stoisko  198.560
+          UAktora  190.526
+       UCHLOPAKOW  216.840
+         UKarolci  358.384
+         UKermita  146.143
+      UPanaWojtka  247.822
+    VegitoWarzywa  252.673
+;
+

@@ -1,0 +1,21 @@
+sum{w in WARZYWA} transport_do_magazynow_rok[m,p,w] :=
+Piaseczno Blonie           0.000
+Piaseczno GoraKalwaria   510.000
+Piaseczno Ksiazenice       0.000
+Piaseczno Legionowo        0.000
+Piaseczno Otwock         145.251
+Piaseczno Wolomin          0.000
+Pruszkow  Blonie         490.000
+Pruszkow  GoraKalwaria     0.000
+Pruszkow  Ksiazenice      27.451
+Pruszkow  Legionowo        0.000
+Pruszkow  Otwock           0.000
+Pruszkow  Wolomin          0.000
+Zielonka  Blonie           0.000
+Zielonka  GoraKalwaria     0.000
+Zielonka  Ksiazenice       0.000
+Zielonka  Legionowo      397.992
+Zielonka  Otwock          32.008
+Zielonka  Wolomin        770.000
+;
+

@@ -1,0 +1,9 @@
+
+Funkcja celu
+434978.894
+Suma wszystkich dostaw do sklepow
+2497.802
+Suma wszystkich dostaw do magazynów
+2497.802
+Suma wszystkich prognoz
+2492.491
